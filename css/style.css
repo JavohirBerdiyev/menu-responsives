@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+body{
+    background-color: #fff;
+    min-height: 100vh;
+    font-family: 'Rubik', 'Arial', sans-serif;
+}
+
+.site-header{
+    padding-top: 48px;
+}
+
+.header-nav{
+    flex-grow: 1;
+}
+
+.header-list{
+    list-style: none;
+}
+
+.header-item:not(:first-child){
+    margin-left: 48px;
+}
+
+.header-link{
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 1.5px;
+    color: #242a45;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header-link:hover{
+    color: #fa5959;
+}
+
+.header-item:last-child .header-link{
+    background: #fa5959;
+    box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.20012);
+    border-radius: 5px;
+    padding: 12px 34px;
+    color: #fff;
+    display: inline-block;
+}
+
+.header-item:last-child .header-link:hover{
+    background-color: #fff;
+    outline: 2px solid #fa5959;
+    color: #fa5959;
+}
+
+.container{
+    width: 80%;
+    padding: 0 10px;
+}
+
+.menu-open, 
+.menu-close {
+    background-color: transparent;
+    font-size: 35px;
+    border: none;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .header-nav {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 100;
+        background-color: #000000ad;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s ease all;
+    }
+
+    .show {
+        top: 0;
+        color: #fff;
+    }
+    .header-list {
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .header-item:not(:first-child){
+        margin-left: 0px;
+    }
+    
+    .header-item {
+        margin-bottom: 30px;
+    }
+
+    .header-link {
+        font-size: 20px;
+        color: #fff;
+    }
+    .menu-open {
+        display: block;
+        position: relative;
+        /* z-index: 200; */
+    }
+    .btn-open {
+        display: none;
+    }
+
+    .menu-close {
+        position: fixed;
+        top: 20px;
+        right: 50px;
+        color: #fff;
+        z-index: 200;
+        display: block;
+    }
+}
